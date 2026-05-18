@@ -10,6 +10,19 @@
         <nav class="nav">
           <NuxtLink to="/learn/nuxt-components">Nuxt 组件</NuxtLink>
           <NuxtLink to="/learn/layouts">布局学习</NuxtLink>
+          <NuxtLink to="/learn/routing">路由学习</NuxtLink>
+          <NuxtLink to="/learn/navigation?tab=phones">导航逻辑</NuxtLink>
+          <NuxtLink to="/learn/data-fetching?category=phones">数据获取</NuxtLink>
+          <NuxtLink to="/learn/fetch-tools">获取工具</NuxtLink>
+          <NuxtLink to="/learn/server-api">服务端 API</NuxtLink>
+          <NuxtLink to="/learn/seo">SEO</NuxtLink>
+          <NuxtLink to="/learn/images">图片优化</NuxtLink>
+          <NuxtLink to="/learn/rendering">渲染模式</NuxtLink>
+          <NuxtLink to="/learn/components">组件工程化</NuxtLink>
+          <NuxtLink to="/learn/content-sources">内容来源</NuxtLink>
+          <NuxtLink to="/campaigns/spring-launch">专题</NuxtLink>
+          <NuxtLink to="/support">支持</NuxtLink>
+          <NuxtLink to="/account">用户中心</NuxtLink>
           <NuxtLink to="/products/laptops">电脑</NuxtLink>
           <NuxtLink to="/products/phones">手机</NuxtLink>
           <NuxtLink to="/products/wearables">穿戴</NuxtLink>

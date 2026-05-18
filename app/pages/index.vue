@@ -1,28 +1,27 @@
 <template>
   <div class="page">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Seasonal showcase</p>
-          <h1>为科技品牌打造像官网一样干净、快、稳的 Nuxt 站点</h1>
+    <section class="brand-hero">
+      <NuxtImg
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80"
+        alt="Nuxt Lab seasonal product collection"
+        class="brand-hero-image"
+        width="1800"
+        height="1100"
+        sizes="100vw"
+        format="webp"
+        priority
+      />
+      <div class="brand-hero-overlay">
+        <div class="container brand-hero-copy">
+          <p class="eyebrow">Spring Launch</p>
+          <h1>Nuxt Lab 2026 全场景新品</h1>
           <p class="lead">
-            你现在学的，不只是写页面，而是如何把首页、分类页、详情页、SEO、图片和数据流拼成一套完整体验。
+            用首页 Hero、分类页、详情页、活动专题和支持页，搭出一个真实科技官网的内容骨架。
           </p>
           <div class="hero-actions">
-            <NuxtLink to="/products/laptops" class="primary-btn">从电脑分类开始</NuxtLink>
-            <NuxtLink to="/products/phones" class="secondary-btn">看手机专题</NuxtLink>
+            <NuxtLink to="/campaigns/spring-launch" class="primary-btn">查看当季专题</NuxtLink>
+            <NuxtLink to="/products/phones/orion-phone-ultra" class="secondary-btn">主推产品</NuxtLink>
           </div>
-        </div>
-
-        <div class="hero-panel">
-          <NuxtImg
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
-            alt="Modern product showcase"
-            class="hero-image"
-            width="1200"
-            height="900"
-            format="webp"
-          />
         </div>
       </div>
     </section>
@@ -44,6 +43,22 @@
             <h3>{{ item.label }}</h3>
             <p>{{ item.description }}</p>
           </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-band">
+        <div>
+          <p class="eyebrow">官网动线</p>
+          <h2>从新品主题进入，再分流到分类、详情和支持</h2>
+          <p class="lead">
+            科技官网常见结构不是随机堆页面，而是先用主题产品建立第一印象，再通过分类页承接浏览，用详情页推动决策，最后用支持页处理售后和服务。
+          </p>
+        </div>
+        <div class="link-row">
+          <NuxtLink to="/campaigns/spring-launch">活动专题页</NuxtLink>
+          <NuxtLink to="/support">支持页</NuxtLink>
         </div>
       </div>
     </section>

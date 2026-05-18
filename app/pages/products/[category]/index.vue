@@ -2,9 +2,23 @@
   <div class="page">
     <section class="section">
       <div class="container">
-        <p class="eyebrow">分类页</p>
-        <h1>{{ categoryInfo.label }}</h1>
-        <p class="lead">{{ categoryInfo.description }}</p>
+        <div class="category-landing">
+          <div>
+            <p class="eyebrow">分类页</p>
+            <h1>{{ categoryInfo.label }}</h1>
+            <p class="lead">{{ categoryInfo.description }}</p>
+            <div class="link-row">
+              <NuxtLink to="/campaigns/spring-launch">查看新品专题</NuxtLink>
+              <NuxtLink to="/support">获取选购支持</NuxtLink>
+            </div>
+          </div>
+
+          <div class="route-card">
+            <p class="eyebrow">Category route</p>
+            <pre><code>pages/products/[category]/index.vue
+route.params.category = {{ category }}</code></pre>
+          </div>
+        </div>
 
         <div class="product-grid">
           <ProductCard

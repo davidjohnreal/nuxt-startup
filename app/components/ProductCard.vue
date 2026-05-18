@@ -6,6 +6,7 @@
       class="product-image"
       width="960"
       height="720"
+      sizes="100vw md:50vw lg:33vw"
       format="webp"
     />
     <div class="product-body">
