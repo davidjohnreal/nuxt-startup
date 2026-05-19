@@ -762,6 +762,15 @@ a {
   color: #dbeafe;
 }
 
+.source-flow-list {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  padding-left: 22px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .product-body {
   display: grid;
   gap: 12px;
