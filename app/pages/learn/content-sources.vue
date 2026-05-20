@@ -78,10 +78,13 @@
               </div>
 
               <p>
-                这组接口模拟真实分层：`server/api` 只处理 HTTP 入参和响应，具体查询放到 `server/services`，服务再访问数据库、CMS SDK 或其他资源。
+                这组接口演示真实分层：`server/api` 只处理 HTTP 入参和响应，具体查询放到 `server/services`，服务再访问数据库、Contentful CMS SDK 或其他资源。
               </p>
 
               <div class="link-row">
+                <NuxtLink to="/learn/cms-sdk">
+                  查看真实 CMS SDK 页
+                </NuxtLink>
                 <button type="button" @click="refreshOrders">
                   查订单数据库
                 </button>
@@ -163,8 +166,13 @@
                 <h2>Markdown 思路：内容像文件，页面负责渲染</h2>
               </div>
               <p>
-                当前项目先用 TS 对象模拟 Markdown 文章。正式项目可以引入 Nuxt Content，把 `content/**/*.md` 变成可查询内容，再用页面组件渲染标题、目录、正文和 SEO。
+                当前项目已经接入真实 Nuxt Content：Markdown 文件在 `content/editorials`，集合配置在 `content.config.ts`，页面用 `queryCollection()` 查询，再用 `ContentRenderer` 渲染正文。
               </p>
+              <div class="link-row">
+                <NuxtLink to="/learn/markdown-content">
+                  查看真实 Markdown 内容页
+                </NuxtLink>
+              </div>
               <pre><code>content/support/getting-started.md
 ---
 title: 新用户支持指南
@@ -208,12 +216,17 @@ interface OrdersResponse {
 
 interface CmsResponse {
   source: string
+  provider: string
+  mode: 'live-sdk' | 'config-missing'
   count: number
+  missingEnv?: string[]
+  sdkCall: string
   entries: Array<{
     id: string
     title: string
     slot: string
     status: string
+    summary: string
     updatedAt: string
   }>
 }
@@ -432,11 +445,21 @@ const fullstackSnapshot = computed(() =>
         count: orders.value?.count,
         products: orders.value?.orders.map(order => order.product) ?? [],
       },
-      mockCmsSdk: {
+      contentfulCmsSdk: {
         pending: cmsPending.value,
         hasError: Boolean(cmsError.value),
+        source: cmsEntries.value?.source,
+        provider: cmsEntries.value?.provider,
+        mode: cmsEntries.value?.mode,
+        missingEnv: cmsEntries.value?.missingEnv ?? [],
+        sdkCall: cmsEntries.value?.sdkCall,
         count: cmsEntries.value?.count,
-        slots: cmsEntries.value?.entries.map(entry => `${entry.slot}:${entry.status}`) ?? [],
+        entries: cmsEntries.value?.entries.map(entry => ({
+          title: entry.title,
+          slot: entry.slot,
+          status: entry.status,
+          updatedAt: entry.updatedAt,
+        })) ?? [],
       },
       formPost: {
         hasResult: Boolean(inquiryResult.value),

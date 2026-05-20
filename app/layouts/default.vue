@@ -20,6 +20,12 @@
           <NuxtLink to="/learn/rendering">渲染模式</NuxtLink>
           <NuxtLink to="/learn/components">组件工程化</NuxtLink>
           <NuxtLink to="/learn/content-sources">内容来源</NuxtLink>
+          <NuxtLink to="/learn/cms-sdk">CMS SDK</NuxtLink>
+          <NuxtLink to="/learn/markdown-content">Markdown</NuxtLink>
+          <NuxtLink to="/learn/performance">性能优化</NuxtLink>
+          <NuxtLink to="/learn/deployment">部署上线</NuxtLink>
+          <NuxtLink to="/learn/project-standards">项目规范</NuxtLink>
+          <NuxtLink to="/learn/capstone">综合实战</NuxtLink>
           <NuxtLink to="/campaigns/spring-launch">专题</NuxtLink>
           <NuxtLink to="/support">支持</NuxtLink>
           <NuxtLink to="/account">用户中心</NuxtLink>

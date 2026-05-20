@@ -1,11 +1,15 @@
 import { getCmsEntries } from '../../services/cmsClient'
 
 export default defineEventHandler(async () => {
-  const entries = await getCmsEntries()
+  const config = useRuntimeConfig()
+  const result = await getCmsEntries({
+    spaceId: config.contentfulSpaceId,
+    deliveryToken: config.contentfulDeliveryToken,
+    contentType: config.contentfulContentType,
+  })
 
   return {
-    source: 'mock-cms-sdk',
-    count: entries.length,
-    entries,
+    source: 'contentful-sdk',
+    ...result,
   }
 })
