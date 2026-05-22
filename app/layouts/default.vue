@@ -26,6 +26,7 @@
           <NuxtLink to="/learn/deployment">部署上线</NuxtLink>
           <NuxtLink to="/learn/project-standards">项目规范</NuxtLink>
           <NuxtLink to="/learn/capstone">综合实战</NuxtLink>
+          <NuxtLink to="/learn/animations">动画交互</NuxtLink>
           <NuxtLink to="/campaigns/spring-launch">专题</NuxtLink>
           <NuxtLink to="/support">支持</NuxtLink>
           <NuxtLink to="/account">用户中心</NuxtLink>

@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/test-utils', '@pinia/nuxt', '@nuxt/content'],
   runtimeConfig: {
@@ -31,7 +35,6 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { swr: 3600 },
     '/campaigns/**': { prerender: true },
     '/learn/rendering': { prerender: true },
     '/learn/capstone': { prerender: true },

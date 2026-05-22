@@ -1,0 +1,10 @@
+.nuxt
+.output
+/.git
+.gitignore
+/.pnpm-store
+/node_modules
+.DS_Store
+*.log
+coverage
+playwright-report

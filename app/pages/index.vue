@@ -1,27 +1,26 @@
 <template>
   <div class="page">
-    <section class="brand-hero">
-      <NuxtImg
-        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80"
-        alt="Nuxt Lab seasonal product collection"
-        class="brand-hero-image"
-        width="1800"
-        height="1100"
-        sizes="100vw"
-        format="webp"
-        priority
-      />
+    <section class="brand-hero gaussian-home-hero">
+      <div class="gaussian-client-host">
+        <GaussianSplatHero v-if="isGaussianReady" />
+        <div v-else class="gaussian-hero-canvas gaussian-hero-fallback" />
+      </div>
+      <div class="gaussian-hero-glow" />
       <div class="brand-hero-overlay">
         <div class="container brand-hero-copy">
-          <p class="eyebrow">Spring Launch</p>
-          <h1>Nuxt Lab 2026 全场景新品</h1>
+          <p class="eyebrow">Spring Launch · Neural Rendering</p>
+          <h1>Nuxt Lab 2026 空间计算新品</h1>
           <p class="lead">
-            用首页 Hero、分类页、详情页、活动专题和支持页，搭出一个真实科技官网的内容骨架。
+            用高斯泼溅式实时粒子场景打造第一屏视觉记忆，再通过分类页、详情页和专题页承接完整的科技官网动线。
           </p>
           <div class="hero-actions">
             <NuxtLink to="/campaigns/spring-launch" class="primary-btn">查看当季专题</NuxtLink>
             <NuxtLink to="/products/phones/orion-phone-ultra" class="secondary-btn">主推产品</NuxtLink>
           </div>
+        </div>
+        <div class="gaussian-hero-note">
+          <strong>Gaussian Splatting Lab</strong>
+          <span>拖动背景可观察实时神经渲染粒子云</span>
         </div>
       </div>
     </section>
@@ -85,6 +84,14 @@
 
 <script setup lang="ts">
 import { categories, products } from '~/data/catalog'
+
+const isGaussianReady = ref(false)
+
+onMounted(() => {
+  window.requestAnimationFrame(() => {
+    isGaussianReady.value = true
+  })
+})
 
 useSeoMeta({
   title: 'Nuxt Lab - 科技官网学习项目',
